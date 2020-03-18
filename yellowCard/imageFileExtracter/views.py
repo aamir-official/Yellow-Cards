@@ -29,12 +29,3 @@ class ImageUploadView(APIView):
       test.text = pytesseract.image_to_data(im, output_type=Output.DICT)
       test.save()
       return Response(FileSerializer(test).data, status=status.HTTP_201_CREATED)
-    #   file_serializer = FileSerializer(data=test)
-    #   image=request.data['image']
-
-
-    #   if file_serializer.is_valid():
-    #       file_serializer.save()
-    #       return Response(file_serializer.data, status=status.HTTP_201_CREATED)
-    #   else:
-    #       return Response(file_serializer.data, status=status.HTTP_201_CREATED)
